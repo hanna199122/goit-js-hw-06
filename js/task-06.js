@@ -6,18 +6,21 @@ const dataLength = input.getAttribute("data-length");
 input.addEventListener("blur", onInputChange);
 
 function onInputChange(evt) {
+  // if (evt.currentTarget)
   if (
-    evt.currentTarget.value.length >= Number(evt.currentTarget.dataset.length)
+    evt.currentTarget.value.length < dataLength ||
+    evt.currentTarget.value.length > dataLength
   ) {
     input.classList.add("invalid");
-  } else {
+  } else if (input.classList.contains("invalid")) {
+    input.classList.remove("invalid");
     input.classList.add("valid");
-    if (input.classList.contains("invalid")) {
-      input.classList.remove("invalid");
-    }
   }
+
+  console.log(evt.currentTarget.value.length);
+  console.log(Number(dataLength));
+  console.log(Number(dataLength) === evt.currentTarget.value.length);
 }
-console.log(onInputChange);
 
 // Напиши скрипт, який під час втрати фокусу на інпуті (подія blur), перевіряє його вміст щодо правильної кількості введених символів.
 // Яка кількість символів повинна бути в інпуті, зазначається в його атрибуті data-length.
@@ -26,3 +29,5 @@ console.log(onInputChange);
 
 //   console.log(typeof evt.currentTarget.value.length);
 //   console.log(typeof Number(evt.currentTarget.dataset.length));
+
+// та у 6 завданні прописати правильну умову , адже у імпуті мають бути введено 6 символів, має додаватись клас valid.Чекаю вашу доопрацбовану роботу!

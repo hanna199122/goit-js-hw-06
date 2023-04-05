@@ -6,7 +6,7 @@ input.addEventListener("input", onInput);
 // console.log(input);
 
 function onInput(event) {
-  text.textContent = event.currentTarget.value;
+  text.textContent = event.currentTarget.value.trim();
 
   console.log(event);
 }

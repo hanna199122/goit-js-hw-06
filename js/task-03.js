@@ -20,9 +20,7 @@ console.log(listItemEl);
 const markup = images
   .map(
     ({ url, alt }) => `
-<li class='gallery-item'><img src="${url}" alt="${alt}"></li>
-<li class='gallery-item'><img src="" alt=""></li>
-<li class='gallery-item'><img src="" alt=""></li>`
+<li class='gallery-item'><img src="${url}" alt="${alt}"></li>`
   )
   .join(" ");
 
